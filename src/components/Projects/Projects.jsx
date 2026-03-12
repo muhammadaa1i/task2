@@ -9,12 +9,13 @@ function Projects() {
       <div className={styles.container}>
         <SectionHeader title="Recent Projects" subtitle="-Our Latest Work" />
         <div className={styles.grid}>
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <ProjectCard
               key={project.id}
               title={project.title}
               description={project.description}
               image={project.image}
+              priority={index === 0}
             />
           ))}
         </div>

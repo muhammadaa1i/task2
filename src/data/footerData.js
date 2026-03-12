@@ -17,9 +17,29 @@ export const moreServices = [
 ]
 
 export const socialLinks = [
-  { id: 1, name: 'facebook' },
-  { id: 2, name: 'twitter' },
-  { id: 3, name: 'slack' },
-  { id: 4, name: 'instagram' },
-  { id: 5, name: 'linkedin' },
+  {
+    id: 1,
+    name: 'facebook',
+    icon: 'facebook',
+  },
+  {
+    id: 2,
+    name: 'twitter',
+    icon: 'twitter',
+  },
+  {
+    id: 3,
+    name: 'slack',
+    icon: 'slack',
+  },
+  {
+    id: 4,
+    name: 'instagram',
+    icon: 'instagram',
+  },
+  {
+    id: 5,
+    name: 'twitter-alt',
+    icon: 'x',
+  },
 ]

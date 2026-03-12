@@ -21,12 +21,14 @@ function Contact() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.left}>
-          <h2 className={styles.heading}>Get in Touch</h2>
+          <div className={styles.headingRow}>
+            <h2 className={styles.heading}>Get in Touch</h2>
+            <span className={styles.line} />
+          </div>
           <p className={styles.tagline}>Have a project in mind? Let's talk!</p>
           <p className={styles.body}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            vehicula commodo ipsum et hendrerit. Phasellus habitasse platea
-            dictumst vestibulum rhoncus est pellentesque.
+            Consectetur dolor sit amet, adipisicing elit. Similique nobis
+            tenetur temporibus maiores amet explicabo porro labore.
           </p>
         </div>
 

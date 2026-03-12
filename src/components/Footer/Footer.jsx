@@ -1,20 +1,6 @@
-import {
-  FaFacebook,
-  FaTwitter,
-  FaSlack,
-  FaInstagram,
-  FaLinkedin,
-} from 'react-icons/fa'
 import { quickLinks, ourServices, moreServices, socialLinks } from '../../data/footerData'
 import styles from './Footer.module.css'
-
-const iconComponents = {
-  facebook: FaFacebook,
-  twitter: FaTwitter,
-  slack: FaSlack,
-  instagram: FaInstagram,
-  linkedin: FaLinkedin,
-}
+import Icon from '../../shared/Icon/Icon'
 
 function Footer() {
   return (
@@ -57,19 +43,16 @@ function Footer() {
           <div className={styles.column}>
             <h4 className={styles.heading}>Follow Us</h4>
             <div className={styles.socials}>
-              {socialLinks.map((social) => {
-                const Icon = iconComponents[social.name]
-                return Icon ? (
-                  <a
-                    key={social.id}
-                    href="#"
-                    className={styles.socialIcon}
-                    aria-label={social.name}
-                  >
-                    <Icon size={16} />
-                  </a>
-                ) : null
-              })}
+              {socialLinks.map((social) => (
+                <a
+                  key={social.id}
+                  href="#"
+                  className={styles.socialIcon}
+                  aria-label={social.name}
+                >
+                  <Icon name={social.icon} className={styles.socialIconGlyph} />
+                </a>
+              ))}
             </div>
           </div>
         </div>

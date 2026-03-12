@@ -1,7 +1,7 @@
 export const services = [
   {
     id: 1,
-    icon: 'web',
+    icon: 'laptop-code',
     title: 'Web Development',
     description: 'Custom websites and web applications',
   },
@@ -13,13 +13,13 @@ export const services = [
   },
   {
     id: 3,
-    icon: 'design',
+    icon: 'palette',
     title: 'UI/UX Design',
     description: 'User-friendly and modern design',
   },
   {
     id: 4,
-    icon: 'consulting',
+    icon: 'tools',
     title: 'IT Consulting',
     description: 'Expert tech consulting services',
   },
