@@ -4,7 +4,7 @@ import Icon from '../../shared/Icon/Icon'
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id="blog" className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.column}>
@@ -30,7 +30,7 @@ function Footer() {
           </div>
 
           <div className={styles.column}>
-            <h4 className={styles.heading}>Our Services</h4>
+            <h4 className={styles.heading}>More Services</h4>
             <ul className={styles.list}>
               {moreServices.map((service) => (
                 <li key={service.id}>
@@ -58,7 +58,7 @@ function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>© 2024 Codefy Group. All rights reserved.</p>
+          <p>© 2025 Codefy Group. All rights reserved.</p>
         </div>
       </div>
     </footer>

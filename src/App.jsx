@@ -1,6 +1,8 @@
 import { Suspense, lazy } from 'react'
-import Services from './components/Services/Services'
+import Hero from './components/Hero/Hero'
 
+const About = lazy(() => import('./components/About/About'))
+const Services = lazy(() => import('./components/Services/Services'))
 const Projects = lazy(() => import('./components/Projects/Projects'))
 const Contact = lazy(() => import('./components/Contact/Contact'))
 const Footer = lazy(() => import('./components/Footer/Footer'))
@@ -11,20 +13,30 @@ function SectionFallback() {
 
 export default function App() {
   return (
-    <div>
-      <Services />
+    <>
+      <Hero />
+      <main>
+        <Suspense fallback={<SectionFallback />}>
+          <About />
+        </Suspense>
 
-      <Suspense fallback={<SectionFallback />}>
-        <Projects />
-      </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Services />
+        </Suspense>
 
-      <Suspense fallback={<SectionFallback />}>
-        <Contact />
-      </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Projects />
+        </Suspense>
+
+        <Suspense fallback={<SectionFallback />}>
+          <Contact />
+        </Suspense>
+      </main>
 
       <Suspense fallback={<SectionFallback />}>
         <Footer />
       </Suspense>
-    </div>
+    </>
   )
 }
+

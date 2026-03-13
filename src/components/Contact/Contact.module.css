@@ -67,6 +67,24 @@
   gap: 0.62rem;
 }
 
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Visually-hidden labels for screen readers */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .input,
 .textarea {
   width: 100%;
@@ -93,6 +111,78 @@
 .textarea {
   resize: vertical;
   min-height: 68px;
+}
+
+.inputError {
+  border-color: #e53e3e !important;
+  background: #fff5f5 !important;
+}
+
+.errorMsg {
+  font-size: 0.8rem;
+  color: #c53030;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Success banner */
+.successBanner {
+  background: var(--bg-white);
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(41, 66, 106, 0.18);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-left: 4px solid #38a169;
+}
+
+.successIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #c6f6d5;
+  color: #276749;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.successBanner strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.successBanner p {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+}
+
+.successReset {
+  margin-left: auto;
+  flex-shrink: 0;
+  align-self: center;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.successReset:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .button {

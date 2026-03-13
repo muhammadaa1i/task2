@@ -26,6 +26,7 @@
   --radius-sm: 8px;
   --radius-md: 10px;
   --radius-lg: 16px;
+  --navbar-height: 76px;
 }
 
 html {
@@ -33,12 +34,19 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', 'Trebuchet MS', Tahoma, sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Trebuchet MS', Tahoma, sans-serif;
   color: var(--text-dark);
   background: var(--bg-white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Scroll offset so sticky navbar doesn't cover section anchors */
+section[id],
+header[id],
+footer[id] {
+  scroll-margin-top: var(--navbar-height);
 }
 
 .section-fallback {
@@ -75,4 +83,21 @@ button {
 input, textarea {
   font-family: inherit;
   outline: none;
+}
+
+/* Focus-visible ring for keyboard accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

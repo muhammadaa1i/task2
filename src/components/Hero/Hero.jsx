@@ -1,0 +1,200 @@
+import { useEffect, useRef, useState, useCallback } from 'react'
+import styles from './Hero.module.css'
+
+const NAV_LINKS = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Blog', href: '#blog' },
+]
+
+const SECTION_IDS = ['home', 'about', 'services', 'portfolio', 'contact', 'blog']
+
+function Hero() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
+  const menuRef = useRef(null)
+  const hamburgerRef = useRef(null)
+
+  // Sticky navbar: detect scroll past hero
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Scroll-spy: highlight active section in nav
+  useEffect(() => {
+    const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(Boolean)
+    if (!sections.length) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
+    )
+
+    sections.forEach((s) => observer.observe(s))
+    return () => observer.disconnect()
+  }, [])
+
+  // Close menu on outside click
+  useEffect(() => {
+    if (!menuOpen) return
+    const onPointerDown = (e) => {
+      if (
+        !menuRef.current?.contains(e.target) &&
+        !hamburgerRef.current?.contains(e.target)
+      ) {
+        setMenuOpen(false)
+      }
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => document.removeEventListener('pointerdown', onPointerDown)
+  }, [menuOpen])
+
+  // Close menu on Escape key
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [menuOpen])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  const closeMenu = useCallback(() => setMenuOpen(false), [])
+  const toggleMenu = useCallback(() => setMenuOpen((v) => !v), [])
+
+  return (
+    <>
+      {/* ── Fixed Navbar (outside header so overflow:hidden doesn't block sticky) ── */}
+      <nav
+        className={`${styles.navbar} ${isScrolled ? styles.navbarSticky : ''}`}
+        aria-label="Main navigation"
+      >
+        <div className={styles.navInner}>
+          <a href="#home" className={styles.logo} onClick={closeMenu}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.logoIcon}>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#3b82f6" />
+              <circle cx="12" cy="12" r="4" fill="#3b82f6" />
+            </svg>
+            <span className={styles.logoText}>CODEFY GROUP</span>
+          </a>
+
+          {/* Desktop links */}
+          <ul className={styles.navLinks}>
+            {NAV_LINKS.map(({ label, href }) => {
+              const sectionId = href.replace('#', '')
+              const isActive = activeSection === sectionId
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {label}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+
+          <a href="#contact" className={styles.ctaButton}>Contact Us</a>
+
+          {/* Hamburger */}
+          <button
+            ref={hamburgerRef}
+            className={styles.hamburger}
+            onClick={toggleMenu}
+            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className={`${styles.hamburgerLine} ${menuOpen ? styles.lineTop : ''}`} />
+            <span className={`${styles.hamburgerLine} ${menuOpen ? styles.lineMid : ''}`} />
+            <span className={`${styles.hamburgerLine} ${menuOpen ? styles.lineBot : ''}`} />
+          </button>
+        </div>
+
+        {/* Mobile drawer */}
+        <div
+          id="mobile-menu"
+          ref={menuRef}
+          className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}
+          aria-hidden={!menuOpen}
+        >
+          <ul className={styles.mobileLinks}>
+            {NAV_LINKS.map(({ label, href }) => {
+              const sectionId = href.replace('#', '')
+              const isActive = activeSection === sectionId
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`${styles.mobileLink} ${isActive ? styles.mobileLinkActive : ''}`}
+                    onClick={closeMenu}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {label}
+                  </a>
+                </li>
+              )
+            })}
+            <li>
+              <a href="#contact" className={styles.mobileCtaBtn} onClick={closeMenu}>
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* ── Hero Banner ── */}
+      <header id="home" className={styles.hero}>
+        <div className={styles.overlay} />
+        <div className={styles.container}>
+          <div className={styles.content}>
+            <div className={styles.left}>
+              <h1 className={styles.title}>
+                Innovative IT Solutions<br />for Your Business
+              </h1>
+              <p className={styles.description}>
+                Empowering your business with cutting-edge software development and technology services.
+              </p>
+              <div className={styles.actions}>
+                <a href="#contact" className={styles.primaryBtn}>Get Started</a>
+                <a href="#services" className={styles.secondaryBtn}>Our Services</a>
+              </div>
+            </div>
+
+            <div className={styles.right}>
+              <img
+                src="/hero_illustration.png"
+                alt="Developer working on software solutions"
+                className={styles.heroImage}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
+  )
+}
+
+export default Hero

@@ -5,7 +5,7 @@ import styles from './Projects.module.css'
 
 function Projects() {
   return (
-    <section className={styles.section}>
+    <section id="portfolio" className={styles.section}>
       <div className={styles.container}>
         <SectionHeader title="Recent Projects" subtitle="-Our Latest Work" />
         <div className={styles.grid}>

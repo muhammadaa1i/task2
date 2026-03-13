@@ -5,7 +5,7 @@ import styles from './Services.module.css'
 
 function Services() {
   return (
-    <section className={styles.section}>
+    <section id="services" className={styles.section}>
       <div className={styles.container}>
         <SectionHeader title="Our Services" subtitle="-What We Offer" />
         <div className={styles.grid}>

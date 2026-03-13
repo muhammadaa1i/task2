@@ -1,8 +1,8 @@
 export const quickLinks = [
-  { id: 1, label: 'Home', href: '#' },
-  { id: 2, label: 'About', href: '#' },
-  { id: 3, label: 'Services', href: '#' },
-  { id: 4, label: 'Portfolio', href: '#' },
+  { id: 1, label: 'Home', href: '#home' },
+  { id: 2, label: 'About', href: '#about' },
+  { id: 3, label: 'Services', href: '#services' },
+  { id: 4, label: 'Portfolio', href: '#portfolio' },
 ]
 
 export const ourServices = [
@@ -12,9 +12,10 @@ export const ourServices = [
 ]
 
 export const moreServices = [
-  { id: 1, label: 'Mobile Apps', href: '#' },
-  { id: 2, label: 'IT Consulting', href: '#' },
+  { id: 1, label: 'UI/UX Design', href: '#services' },
+  { id: 2, label: 'IT Consulting', href: '#services' },
 ]
+
 
 export const socialLinks = [
   {
