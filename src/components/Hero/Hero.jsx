@@ -1,20 +1,14 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import styles from './Hero.module.css'
-
-const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Blog', href: '#blog' },
-]
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from '../../shared/LanguageSwitcher/LanguageSwitcher'
 
 const SECTION_IDS = ['home', 'about', 'services', 'portfolio', 'contact', 'blog']
 
 const STATS = [
-  { end: 200, suffix: '+', label: 'Completed Projects' },
-  { end: 150, suffix: '+', label: 'Happy Clients' },
-  { end: 8, suffix: '+', label: 'Years Experience' },
+  { end: 200, suffix: '+', labelKey: 'hero.stats.completedProjects' },
+  { end: 150, suffix: '+', labelKey: 'hero.stats.happyClients' },
+  { end: 8, suffix: '+', labelKey: 'hero.stats.yearsExperience' },
 ]
 
 function useCounter(end, duration = 1800, active = false) {
@@ -38,6 +32,7 @@ function useCounter(end, duration = 1800, active = false) {
 }
 
 function Hero() {
+  const { t } = useTranslation()
   const [isScrolled, setIsScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
@@ -115,13 +110,20 @@ function Hero() {
 
   const closeMenu = useCallback(() => setMenuOpen(false), [])
   const toggleMenu = useCallback(() => setMenuOpen((v) => !v), [])
+  const navLinks = [
+    { label: t('nav.home'), href: '#home' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.services'), href: '#services' },
+    { label: t('nav.portfolio'), href: '#portfolio' },
+    { label: t('nav.blog'), href: '#blog' },
+  ]
 
   return (
     <>
       {/* ── Fixed Navbar (outside header so overflow:hidden doesn't block sticky) ── */}
       <nav
         className={`${styles.navbar} ${isScrolled ? styles.navbarSticky : ''}`}
-        aria-label="Main navigation"
+        aria-label={t('nav.mainNavigation')}
       >
         <div className={styles.navInner}>
           <a href="#home" className={styles.logo} onClick={closeMenu}>
@@ -134,7 +136,7 @@ function Hero() {
 
           {/* Desktop links */}
           <ul className={styles.navLinks}>
-            {NAV_LINKS.map(({ label, href }) => {
+            {navLinks.map(({ label, href }) => {
               const sectionId = href.replace('#', '')
               const isActive = activeSection === sectionId
               return (
@@ -151,14 +153,17 @@ function Hero() {
             })}
           </ul>
 
-          <a href="#contact" className={styles.ctaButton}>Contact Us</a>
+          <div className={styles.navActions}>
+            <a href="#contact" className={styles.ctaButton}>{t('nav.contact')}</a>
+            <LanguageSwitcher />
+          </div>
 
           {/* Hamburger */}
           <button
             ref={hamburgerRef}
             className={styles.hamburger}
             onClick={toggleMenu}
-            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
@@ -176,7 +181,7 @@ function Hero() {
           aria-hidden={!menuOpen}
         >
           <ul className={styles.mobileLinks}>
-            {NAV_LINKS.map(({ label, href }) => {
+            {navLinks.map(({ label, href }) => {
               const sectionId = href.replace('#', '')
               const isActive = activeSection === sectionId
               return (
@@ -194,8 +199,11 @@ function Hero() {
             })}
             <li>
               <a href="#contact" className={styles.mobileCtaBtn} onClick={closeMenu}>
-                Contact Us
+                {t('nav.contact')}
               </a>
+            </li>
+            <li className={styles.mobileLanguageRow}>
+              <LanguageSwitcher mobile />
             </li>
           </ul>
         </div>
@@ -208,21 +216,21 @@ function Hero() {
           <div className={styles.content}>
             <div className={styles.left}>
               <h1 className={styles.title}>
-                Innovative IT Solutions<br />for Your Business
+                {t('hero.title')}
               </h1>
               <p className={styles.description}>
-                Empowering your business with cutting-edge software development and technology services.
+                {t('hero.description')}
               </p>
               <div className={styles.actions}>
-                <a href="#contact" className={styles.primaryBtn}>Get Started</a>
-                <a href="#services" className={styles.secondaryBtn}>Our Services</a>
+                <a href="#contact" className={styles.primaryBtn}>{t('hero.getStarted')}</a>
+                <a href="#services" className={styles.secondaryBtn}>{t('hero.ourServices')}</a>
               </div>
             </div>
 
             <div className={styles.right}>
               <img
                 src="/hero_illustration.png"
-                alt="Developer working on software solutions"
+                alt={t('hero.imageAlt')}
                 className={styles.heroImage}
                 loading="eager"
                 fetchPriority="high"
@@ -233,8 +241,8 @@ function Hero() {
 
           {/* ── Stats bar ── */}
           <div className={styles.statsBar} ref={statsRef}>
-            {STATS.map(({ end, suffix, label }) => (
-              <StatItem key={label} end={end} suffix={suffix} label={label} active={statsActive} />
+            {STATS.map(({ end, suffix, labelKey }) => (
+              <StatItem key={labelKey} end={end} suffix={suffix} label={t(labelKey)} active={statsActive} />
             ))}
           </div>
         </div>

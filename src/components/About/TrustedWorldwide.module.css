@@ -328,6 +328,9 @@
 
 .ifzaBadge {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
     font-size: 0.85rem;
     font-weight: 700;
     color: #2a7a3b;
@@ -339,7 +342,7 @@
 /* ── IT Park Banner ── */
 .itparkSection {
     position: relative;
-    height: 180px;
+    height: 200px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -358,16 +361,16 @@
     z-index: 0;
 }
 
-/* Subtle left fade so logo stays readable */
+/* Subtle fade to frame the background nicely */
 .itparkOverlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to right,
-        rgba(255, 255, 255, 0.72) 0%,
-        rgba(255, 255, 255, 0.25) 35%,
-        rgba(255, 255, 255, 0.0) 65%,
-        rgba(255, 255, 255, 0.0) 100%
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.6) 30%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
     z-index: 1;
     pointer-events: none;
@@ -376,20 +379,20 @@
 .itparkBannerContent {
     position: relative;
     z-index: 2;
-    padding: 0 2rem;
+    padding: 0 3rem;
 }
 
 .itparkBannerLogo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .itparkSvgIcon {
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.18));
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
 .itparkBannerText {
@@ -398,38 +401,35 @@
 }
 
 .itparkBannerText strong {
-    font-size: 1.4rem;
-    font-weight: 900;
-    color: #1a3a1a;
-    letter-spacing: 0.08em;
-    line-height: 1.1;
-    text-shadow: 0 1px 3px rgba(255,255,255,0.6);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1c355e;
+    letter-spacing: 0.02em;
+    line-height: 1;
 }
 
 .itparkBannerText span {
-    font-size: 0.72rem;
-    color: #2e5c2e;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    color: #1c355e;
+    font-weight: 600;
+    margin-top: 2px;
 }
 
 /* Flag — right side */
 .itparkFlagWrap {
     position: relative;
     z-index: 2;
-    padding: 0 2rem;
+    margin-right: -10px; /* pull to edge */
     display: flex;
     align-items: center;
 }
 
 .itparkFlag {
-    height: 110px;
+    height: 180px;
     width: auto;
-    object-fit: contain;
-    border-radius: 3px;
-    box-shadow: 2px 4px 16px rgba(0,0,0,0.28);
-    transform: perspective(400px) rotateY(-6deg);
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: -4px 0 16px rgba(0,0,0,0.15);
 }
 
 /* ── Tagline Section ── */
@@ -500,7 +500,7 @@
     }
 
     .itparkSection {
-        height: 140px;
+        height: 150px;
     }
 
     .itparkBannerContent {
@@ -517,11 +517,12 @@
     }
 
     .itparkFlagWrap {
-        padding: 0 1rem;
+        margin-right: 1rem;
+        padding: 0.22rem 0.3rem;
     }
 
     .itparkFlag {
-        height: 80px;
+        height: 72px;
     }
 }
 

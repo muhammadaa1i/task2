@@ -1,52 +1,52 @@
 import styles from './About.module.css'
 import TrustedWorldwide from './TrustedWorldwide'
+import { useTranslation } from 'react-i18next'
 
 const STATS = [
-    { value: '8+', label: 'Years of Experience' },
-    { value: '200+', label: 'Projects Delivered' },
-    { value: '95%', label: 'Client Satisfaction' },
+    { value: '8+', labelKey: 'about.stats.yearsExperience' },
+    { value: '200+', labelKey: 'about.stats.projectsDelivered' },
+    { value: '95%', labelKey: 'about.stats.clientSatisfaction' },
 ]
 
 function About() {
+    const { t } = useTranslation()
+
     return (
         <>
         <section id="about" className={styles.section}>
             <div className={styles.container}>
                 {/* Left — text */}
                 <div className={styles.left}>
-                    <p className={styles.eyebrow}>Who We Are</p>
+                    <p className={styles.eyebrow}>{t('about.eyebrow')}</p>
                     <h2 className={styles.heading}>
-                        Building Digital Experiences that Drive Growth
+                        {t('about.heading')}
                     </h2>
                     <p className={styles.body}>
-                        Codefy Group is a full-service technology company passionate about
-                        crafting high-quality software products. From scalable web platforms
-                        to intuitive mobile apps, we partner with businesses of all sizes to
-                        turn ideas into reality — on time and on budget.
+                        {t('about.bodyOne')}
                     </p>
                     <p className={styles.body}>
-                        Our multidisciplinary team of developers, designers, and IT
-                        consultants brings deep expertise and a client-first mindset to every
-                        engagement. We don't just write code; we build solutions.
+                        {t('about.bodyTwo')}
                     </p>
                     <a href="#contact" className={styles.cta}>
-                        Work with Us
+                        {t('about.cta')}
                     </a>
                 </div>
 
                 {/* Right — stats */}
                 <div className={styles.right}>
                     <div className={styles.statsGrid}>
-                        {STATS.map(({ value, label }) => (
-                            <div key={label} className={styles.statCard}>
+                        {STATS.map(({ value, labelKey }) => (
+                            <div key={labelKey} className={styles.statCard}>
                                 <span className={styles.statValue}>{value}</span>
-                                <span className={styles.statLabel}>{label}</span>
+                                <span className={styles.statLabel}>{t(labelKey)}</span>
                             </div>
                         ))}
                     </div>
                     <div className={styles.badge}>
-                        <span className={styles.badgeIcon}>🏆</span>
-                        <span>Trusted by 50+ companies worldwide</span>
+                        <span className={styles.badgeIcon}>
+                            <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3c6.svg" alt="trophy" width="24" height="24" style={{ display: 'block' }} />
+                        </span>
+                        <span>{t('about.trustedBadge')}</span>
                     </div>
                 </div>
             </div>

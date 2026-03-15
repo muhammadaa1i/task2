@@ -84,8 +84,13 @@
   align-items: center;
   gap: 2.5rem;
   margin-left: auto;
-  /* Pushes links and button to the right */
-  margin-right: 1.5rem;
+  margin-right: 1rem;
+}
+
+.navActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .navLink {
@@ -156,27 +161,31 @@
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
-  width: 38px;
-  height: 38px;
-  padding: 6px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  transition: background 0.2s ease;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
   flex-shrink: 0;
+  margin-left: auto;
+  cursor: pointer;
 }
 
 .hamburger:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .hamburgerLine {
   display: block;
-  width: 100%;
+  width: 20px;
   height: 2px;
-  background: #dce8fb;
+  background: #f2f7ff;
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
 .lineTop {
@@ -201,7 +210,7 @@
 }
 
 .mobileMenuOpen {
-  max-height: 420px;
+  max-height: 520px;
 }
 
 .mobileLinks {
@@ -239,6 +248,10 @@
   font-size: 0.95rem;
   font-weight: 700;
   text-align: center;
+}
+
+.mobileLanguageRow {
+  margin-top: 0.2rem;
 }
 
 /* ── Hero content ── */
@@ -400,7 +413,7 @@
 @media (max-width: 760px) {
 
   .navLinks,
-  .ctaButton {
+  .navActions {
     display: none;
   }
 

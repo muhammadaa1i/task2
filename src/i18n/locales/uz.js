@@ -1,0 +1,198 @@
+const uz = {
+  translation: {
+    languageName: "O'zbek",
+    nav: {
+      home: 'Bosh sahifa',
+      about: 'Biz haqimizda',
+      services: 'Xizmatlar',
+      portfolio: 'Portfolio',
+      blog: 'Blog',
+      contact: "Bog'lanish",
+      openMenu: 'Navigatsiya menyusini ochish',
+      closeMenu: 'Navigatsiya menyusini yopish',
+      mainNavigation: 'Asosiy navigatsiya',
+    },
+    languageSwitcher: {
+      buttonLabel: 'Tillar',
+      panelTitle: 'Tillar',
+      current: 'Joriy til',
+    },
+    hero: {
+      title: 'Biznesingiz uchun innovatsion IT yechimlar',
+      description: "Biznesingizni zamonaviy dasturiy ta'minot va texnologik xizmatlar bilan kuchaytiramiz.",
+      getStarted: 'Boshlash',
+      ourServices: 'Xizmatlarimiz',
+      imageAlt: "Dasturiy yechimlar ustida ishlayotgan dasturchi",
+      stats: {
+        completedProjects: 'Yakunlangan loyihalar',
+        happyClients: 'Mamnun mijozlar',
+        yearsExperience: 'Yillik tajriba',
+      },
+    },
+    about: {
+      eyebrow: 'Biz kimmiz',
+      heading: "O'sishga xizmat qiladigan raqamli tajribalarni yaratamiz",
+      bodyOne: "Codefy Group - yuqori sifatli dasturiy mahsulotlar yaratishga ishtiyoqi baland bo'lgan to'liq xizmat ko'rsatuvchi texnologik kompaniya. Kengaytiriladigan veb platformalardan tortib intuitiv mobil ilovalargacha, biz har xil hajmdagi bizneslar bilan birga g'oyalarni o'z vaqtida va belgilangan budjetda haqiqatga aylantiramiz.",
+      bodyTwo: "Dasturchilar, dizaynerlar va IT maslahatchilaridan iborat jamoamiz har bir hamkorlikka chuqur tajriba va mijozga yo'naltirilgan yondashuv olib kiradi. Biz shunchaki kod yozmaymiz, yechim yaratamiz.",
+      cta: 'Biz bilan ishlang',
+      stats: {
+        yearsExperience: 'Yillik tajriba',
+        projectsDelivered: 'Topshirilgan loyihalar',
+        clientSatisfaction: 'Mijozlar mamnunligi',
+      },
+      trustedBadge: "Dunyo bo'ylab 50+ kompaniya bizga ishonadi",
+    },
+    trustedWorldwide: {
+      heroTitle: 'Butun dunyoda ishonchli',
+      heroSubtitlePrefix: 'Dubay va',
+      heroSubtitleHighlight: 'Oʻzbekistonda',
+      sectionTitle: 'Xalqaro roʻyxatdan oʻtish',
+      sectionBodyPrefix: "Codefy Group -",
+      sectionBodyDubai: 'Silicon Oasis Free Zone',
+      sectionBodyMiddle: "hududida ro'yxatdan o'tgan hamda",
+      sectionBodyUzbekistan: 'IT Park Uzbekistan',
+      cert: {
+        logoSubLine1: 'Dubai Integrated',
+        logoSubLine2: 'Economic Zones',
+        title: 'Tashkil topganlik sertifikati',
+        regNumber: "Ro'yxat raqami",
+        formationDate: 'Tuzilgan sana',
+        companyName: 'Kompaniya nomi',
+        licenseNumber: 'Litsenziya raqami',
+        companyNameValue: 'INTEXM MEDIA - FZCO',
+        footer: "Dubai Silicon Oasis hududida ro'yxatdan o'tgan kompaniyalar uchun litsenziyalovchi organ sifatida Dubai Integrated Economic Zones Authority tomonidan berilgan.",
+      },
+      itParkCertificateAlt: 'IT Park GUVOHNOMA sertifikati, CODEFY GROUP MCHJ',
+      stats: {
+        regNumber: "Ro'yxat raqami",
+        licenseNumber: 'Litsenziya raqami',
+        formationDate: 'Tuzilgan sana',
+      },
+      location: {
+        freeZone: 'Erkin zona',
+        location: 'Manzil',
+      },
+      certified: {
+        textPrefix: 'Dubai tomonidan sertifikatlangan',
+        textSuffix: 'Integrated Economic Zones Authority (DIEZ).',
+      },
+      itPark: {
+        logoSub: 'Innovatsion texnopark',
+        flagAlt: "O'zbekiston bayrog'i",
+      },
+      taglineBodyPrefix: 'Codefy Group',
+      taglineBodyDubai: 'Dubai Silicon Oasis Free Zone',
+      taglineBodyMiddle: "hududidagi litsenziyaga va",
+      taglineBodyUzbekistan: 'IT Park Uzbekistan',
+      taglineBodySuffix: "rezidentligiga ega bo'lib, global texnologik innovatsiyalar uchun ishonchli hamkoringizdir.",
+      taglineStart: 'Mahalliydan boshlang',
+      taglineGo: 'globalga chiqing',
+    },
+    services: {
+      title: 'Xizmatlarimiz',
+      subtitle: '-Nima taklif qilamiz',
+      items: {
+        webDevelopment: {
+          title: 'Veb dasturlash',
+          description: 'React, Next.js va FastAPI asosida yaratilgan zamonaviy va tezkor sayt hamda veb ilovalar.',
+        },
+        mobileApps: {
+          title: 'Mobil ilovalar',
+          description: 'Flutter va React Native yordamida yaratilgan yuqori sifatli iOS va Android ilovalari.',
+        },
+        uiuxDesign: {
+          title: 'UI/UX dizayn',
+          description: 'Foydalanuvchi tajribasini yaxshilaydigan intuitiv va zamonaviy dizayn yechimlari.',
+        },
+        telegramBots: {
+          title: 'Telegram botlar',
+          description: "Biznes jarayonlarini avtomatlashtiradigan va buyurtmalarni boshqaradigan maxsus Telegram botlar.",
+        },
+        itConsulting: {
+          title: 'IT konsalting',
+          description: "Biznes o'sishi uchun professional texnologik strategiya va konsalting.",
+        },
+        cloudSolutions: {
+          title: 'Bulutli yechimlar',
+          description: 'AWS, Google Cloud va DigitalOcean platformalarida server hamda infratuzilma boshqaruvi.',
+        },
+      },
+    },
+    projects: {
+      title: 'Soʻnggi loyihalar',
+      subtitle: '-Eng yangi ishlarimiz',
+      categories: {
+        web: 'Veb',
+        mobile: 'Mobil',
+        bot: 'Bot',
+      },
+      items: {
+        ecommerce: {
+          title: 'E-Commerce platformasi',
+          description: "To'lov integratsiyasi va admin panelga ega to'liq funksional onlayn do'kon.",
+        },
+        crm: {
+          title: 'CRM tizimi',
+          description: 'Analitika va hisobotlarga ega mijozlar bilan ishlash boshqaruv tizimi.',
+        },
+        delivery: {
+          title: 'Yetkazib berish ilovasi',
+          description: 'iOS va Android uchun real vaqt kuzatuviga ega yetkazib berish ilovasi.',
+        },
+        telegramCommerce: {
+          title: 'Telegram savdo boti',
+          description: "Onlayn savdo uchun to'lov integratsiyasiga ega avtomatlashtirilgan buyurtma boti.",
+        },
+      },
+    },
+    contact: {
+      heading: "Bog'lanish",
+      tagline: 'Loyiha gʻoyangiz bormi? Keling, suhbatlashamiz!',
+      body: "G'oyangizni hayotga tatbiq etishga tayyormisiz? Formani to'ldiring va mutaxassislarimizdan biri bir ish kuni ichida siz bilan bog'lanadi.",
+      successTitle: 'Xabaringiz muvaffaqiyatli yuborildi!',
+      successBody: "Murojaatingiz uchun rahmat. Tez orada siz bilan bog'lanamiz.",
+      sendAnother: 'Yana yuborish',
+      submit: 'Xabar yuborish',
+      fields: {
+        nameLabel: 'Ismingiz',
+        emailLabel: 'Email manzil',
+        phoneLabel: 'Telefon raqam (ixtiyoriy)',
+        messageLabel: 'Xabar',
+      },
+      errors: {
+        nameRequired: 'Ismingizni kiriting.',
+        emailRequired: 'Email manzil talab qilinadi.',
+        emailInvalid: "Iltimos, to'g'ri email manzil kiriting.",
+        messageRequired: 'Xabar matni talab qilinadi.',
+      },
+    },
+    footer: {
+      quickLinks: 'Tezkor havolalar',
+      ourServices: 'Xizmatlarimiz',
+      moreServices: "Qo'shimcha xizmatlar",
+      followUs: 'Bizni kuzating',
+      copyright: '© 2026 Codefy Group. Barcha huquqlar himoyalangan.',
+      links: {
+        home: 'Bosh sahifa',
+        about: 'Biz haqimizda',
+        services: 'Xizmatlar',
+        portfolio: 'Portfolio',
+        webDevelopment: 'Veb dasturlash',
+        mobileApps: 'Mobil ilovalar',
+        uiuxDesign: 'UI/UX dizayn',
+        telegramBots: 'Telegram botlar',
+        itConsulting: 'IT konsalting',
+        cloudSolutions: 'Bulutli yechimlar',
+      },
+      social: {
+        facebook: 'Facebook',
+        twitter: 'Twitter',
+        slack: 'Slack',
+        instagram: 'Instagram',
+        x: 'X',
+      },
+    },
+  },
+}
+
+export default uz

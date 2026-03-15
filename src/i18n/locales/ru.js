@@ -1,0 +1,198 @@
+const ru = {
+  translation: {
+    languageName: 'Русский',
+    nav: {
+      home: 'Главная',
+      about: 'О нас',
+      services: 'Услуги',
+      portfolio: 'Портфолио',
+      blog: 'Блог',
+      contact: 'Связаться',
+      openMenu: 'Открыть меню навигации',
+      closeMenu: 'Закрыть меню навигации',
+      mainNavigation: 'Основная навигация',
+    },
+    languageSwitcher: {
+      buttonLabel: 'Языки',
+      panelTitle: 'Языки',
+      current: 'Текущий язык',
+    },
+    hero: {
+      title: 'Инновационные IT-решения для вашего бизнеса',
+      description: 'Усиливаем ваш бизнес с помощью современного программного обеспечения и технологических услуг.',
+      getStarted: 'Начать',
+      ourServices: 'Наши услуги',
+      imageAlt: 'Разработчик работает над программными решениями',
+      stats: {
+        completedProjects: 'Завершенных проектов',
+        happyClients: 'Довольных клиентов',
+        yearsExperience: 'Лет опыта',
+      },
+    },
+    about: {
+      eyebrow: 'Кто мы',
+      heading: 'Создаем цифровые продукты, которые помогают расти',
+      bodyOne: 'Codefy Group - технологическая компания полного цикла, которая с увлечением создает качественные программные продукты. От масштабируемых веб-платформ до удобных мобильных приложений - мы помогаем бизнесу любого масштаба превращать идеи в результат в срок и в рамках бюджета.',
+      bodyTwo: 'Наша команда разработчиков, дизайнеров и IT-консультантов привносит глубокую экспертизу и ориентацию на клиента в каждый проект. Мы не просто пишем код, мы создаем решения.',
+      cta: 'Работать с нами',
+      stats: {
+        yearsExperience: 'Лет опыта',
+        projectsDelivered: 'Сданных проектов',
+        clientSatisfaction: 'Удовлетворенность клиентов',
+      },
+      trustedBadge: 'Нам доверяют 50+ компаний по всему миру',
+    },
+    trustedWorldwide: {
+      heroTitle: 'Нам доверяют по всему миру',
+      heroSubtitlePrefix: 'Официально лицензированный IT-бизнес в Дубае и',
+      heroSubtitleHighlight: 'Узбекистане',
+      sectionTitle: 'Международная регистрация',
+      sectionBodyPrefix: 'Codefy Group - международно признанная IT-компания, зарегистрированная в',
+      sectionBodyDubai: 'Silicon Oasis Free Zone',
+      sectionBodyMiddle: 'в Дубае, ОАЭ, и официальный резидент',
+      sectionBodyUzbekistan: 'IT Park Uzbekistan',
+      cert: {
+        logoSubLine1: 'Dubai Integrated',
+        logoSubLine2: 'Economic Zones',
+        title: 'Сертификат о регистрации',
+        regNumber: 'Регистрационный номер',
+        formationDate: 'Дата регистрации',
+        companyName: 'Название компании',
+        licenseNumber: 'Номер лицензии',
+        companyNameValue: 'INTEXM MEDIA - FZCO',
+        footer: 'Dubai Integrated Economic Zones Authority, как лицензирующий орган для всех компаний, зарегистрированных в Dubai Silicon Oasis.',
+      },
+      itParkCertificateAlt: 'Сертификат IT Park GUVOHNOMA, CODEFY GROUP MCHJ',
+      stats: {
+        regNumber: 'Регистрационный номер',
+        licenseNumber: 'Номер лицензии',
+        formationDate: 'Дата регистрации',
+      },
+      location: {
+        freeZone: 'Свободная зона',
+        location: 'Локация',
+      },
+      certified: {
+        textPrefix: 'Сертифицировано Dubai',
+        textSuffix: 'Integrated Economic Zones Authority (DIEZ).',
+      },
+      itPark: {
+        logoSub: 'Инновационный технопарк',
+        flagAlt: 'Флаг Узбекистана',
+      },
+      taglineBodyPrefix: 'Имея лицензии в',
+      taglineBodyDubai: 'Dubai Silicon Oasis Free Zone',
+      taglineBodyMiddle: 'в ОАЭ, а также резидентство в',
+      taglineBodyUzbekistan: 'IT Park Uzbekistan',
+      taglineBodySuffix: 'Codefy Group является вашим надежным партнером в сфере глобальных технологических инноваций.',
+      taglineStart: 'Начинайте локально',
+      taglineGo: 'выходите глобально',
+    },
+    services: {
+      title: 'Наши услуги',
+      subtitle: '-Что мы предлагаем',
+      items: {
+        webDevelopment: {
+          title: 'Веб-разработка',
+          description: 'Современные и быстрые сайты и веб-приложения на React, Next.js и FastAPI.',
+        },
+        mobileApps: {
+          title: 'Мобильные приложения',
+          description: 'Качественные iOS и Android-приложения на Flutter и React Native.',
+        },
+        uiuxDesign: {
+          title: 'UI/UX дизайн',
+          description: 'Интуитивные современные дизайн-решения, улучшающие пользовательский опыт.',
+        },
+        telegramBots: {
+          title: 'Telegram-боты',
+          description: 'Индивидуальные Telegram-боты для автоматизации бизнес-процессов и обработки заказов.',
+        },
+        itConsulting: {
+          title: 'IT-консалтинг',
+          description: 'Профессиональная технологическая стратегия и консалтинг для роста вашего бизнеса.',
+        },
+        cloudSolutions: {
+          title: 'Облачные решения',
+          description: 'Управление серверами и инфраструктурой в AWS, Google Cloud и DigitalOcean.',
+        },
+      },
+    },
+    projects: {
+      title: 'Последние проекты',
+      subtitle: '-Наши новые работы',
+      categories: {
+        web: 'Веб',
+        mobile: 'Мобайл',
+        bot: 'Бот',
+      },
+      items: {
+        ecommerce: {
+          title: 'E-Commerce платформа',
+          description: 'Полнофункциональный интернет-магазин с интеграцией оплат и админ-панелью.',
+        },
+        crm: {
+          title: 'CRM система',
+          description: 'Система управления клиентами с аналитикой и отчетами.',
+        },
+        delivery: {
+          title: 'Приложение доставки',
+          description: 'Приложение для iOS и Android с отслеживанием в реальном времени.',
+        },
+        telegramCommerce: {
+          title: 'Telegram-бот для продаж',
+          description: 'Автоматизированный бот приема заказов с интеграцией оплат для онлайн-продаж.',
+        },
+      },
+    },
+    contact: {
+      heading: 'Свяжитесь с нами',
+      tagline: 'Есть идея проекта? Давайте обсудим!',
+      body: 'Готовы воплотить идею в жизнь? Заполните форму, и один из наших специалистов свяжется с вами в течение одного рабочего дня.',
+      successTitle: 'Сообщение успешно отправлено!',
+      successBody: 'Спасибо за обращение. Мы скоро свяжемся с вами.',
+      sendAnother: 'Отправить еще',
+      submit: 'Отправить сообщение',
+      fields: {
+        nameLabel: 'Ваше имя',
+        emailLabel: 'Email адрес',
+        phoneLabel: 'Номер телефона (необязательно)',
+        messageLabel: 'Сообщение',
+      },
+      errors: {
+        nameRequired: 'Введите ваше имя.',
+        emailRequired: 'Email адрес обязателен.',
+        emailInvalid: 'Введите корректный email адрес.',
+        messageRequired: 'Сообщение обязательно.',
+      },
+    },
+    footer: {
+      quickLinks: 'Быстрые ссылки',
+      ourServices: 'Наши услуги',
+      moreServices: 'Дополнительные услуги',
+      followUs: 'Мы в соцсетях',
+      copyright: '© 2026 Codefy Group. Все права защищены.',
+      links: {
+        home: 'Главная',
+        about: 'О нас',
+        services: 'Услуги',
+        portfolio: 'Портфолио',
+        webDevelopment: 'Веб-разработка',
+        mobileApps: 'Мобильные приложения',
+        uiuxDesign: 'UI/UX дизайн',
+        telegramBots: 'Telegram-боты',
+        itConsulting: 'IT-консалтинг',
+        cloudSolutions: 'Облачные решения',
+      },
+      social: {
+        facebook: 'Facebook',
+        twitter: 'Twitter',
+        slack: 'Slack',
+        instagram: 'Instagram',
+        x: 'X',
+      },
+    },
+  },
+}
+
+export default ru

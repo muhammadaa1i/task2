@@ -1,0 +1,198 @@
+const en = {
+  translation: {
+    languageName: 'English',
+    nav: {
+      home: 'Home',
+      about: 'About',
+      services: 'Services',
+      portfolio: 'Portfolio',
+      blog: 'Blog',
+      contact: 'Contact Us',
+      openMenu: 'Open navigation menu',
+      closeMenu: 'Close navigation menu',
+      mainNavigation: 'Main navigation',
+    },
+    languageSwitcher: {
+      buttonLabel: 'Languages',
+      panelTitle: 'Languages',
+      current: 'Current language',
+    },
+    hero: {
+      title: 'Innovative IT Solutions for Your Business',
+      description: 'Empowering your business with cutting-edge software development and technology services.',
+      getStarted: 'Get Started',
+      ourServices: 'Our Services',
+      imageAlt: 'Developer working on software solutions',
+      stats: {
+        completedProjects: 'Completed Projects',
+        happyClients: 'Happy Clients',
+        yearsExperience: 'Years Experience',
+      },
+    },
+    about: {
+      eyebrow: 'Who We Are',
+      heading: 'Building Digital Experiences that Drive Growth',
+      bodyOne: 'Codefy Group is a full-service technology company passionate about crafting high-quality software products. From scalable web platforms to intuitive mobile apps, we partner with businesses of all sizes to turn ideas into reality on time and on budget.',
+      bodyTwo: "Our multidisciplinary team of developers, designers, and IT consultants brings deep expertise and a client-first mindset to every engagement. We do not just write code; we build solutions.",
+      cta: 'Work with Us',
+      stats: {
+        yearsExperience: 'Years of Experience',
+        projectsDelivered: 'Projects Delivered',
+        clientSatisfaction: 'Client Satisfaction',
+      },
+      trustedBadge: 'Trusted by 50+ companies worldwide',
+    },
+    trustedWorldwide: {
+      heroTitle: 'Trusted Worldwide',
+      heroSubtitlePrefix: 'Officially Licensed Tech Business in Dubai and',
+      heroSubtitleHighlight: 'Uzbekistan',
+      sectionTitle: 'International Registration',
+      sectionBodyPrefix: 'Codefy Group is a globally recognized tech company registered in',
+      sectionBodyDubai: 'Silicon Oasis Free Zone',
+      sectionBodyMiddle: 'Dubai, UAE and is an official resident of',
+      sectionBodyUzbekistan: 'IT Park Uzbekistan',
+      cert: {
+        logoSubLine1: 'Dubai Integrated',
+        logoSubLine2: 'Economic Zones',
+        title: 'Certificate of Formation',
+        regNumber: 'Registration Number',
+        formationDate: 'Formation Date',
+        companyName: 'Company Name',
+        licenseNumber: 'License Number',
+        companyNameValue: 'INTEXM MEDIA - FZCO',
+        footer: 'Dubai Integrated Economic Zones Authority, in its capacity as the licensing authority for all companies incorporated in Dubai Silicon Oasis.',
+      },
+      itParkCertificateAlt: 'IT Park GUVOHNOMA Certificate, CODEFY GROUP MCHJ',
+      stats: {
+        regNumber: 'Registration Number',
+        licenseNumber: 'License Number',
+        formationDate: 'Formation Date',
+      },
+      location: {
+        freeZone: 'Free Zone',
+        location: 'Location',
+      },
+      certified: {
+        textPrefix: 'Certified by Dubai',
+        textSuffix: 'Integrated Economic Zones Authority (DIEZ).',
+      },
+      itPark: {
+        logoSub: 'Innovation Technology Park',
+        flagAlt: 'Flag of Uzbekistan',
+      },
+      taglineBodyPrefix: 'By holding licenses in',
+      taglineBodyDubai: 'Dubai Silicon Oasis Free Zone',
+      taglineBodyMiddle: 'UAE and as a resident of',
+      taglineBodyUzbekistan: 'IT Park Uzbekistan',
+      taglineBodySuffix: 'Codefy Group is your trusted partner for global tech innovation.',
+      taglineStart: 'Start local',
+      taglineGo: 'GO global',
+    },
+    services: {
+      title: 'Our Services',
+      subtitle: '-What We Offer',
+      items: {
+        webDevelopment: {
+          title: 'Web Development',
+          description: 'Modern, fast websites and web apps built with React, Next.js and FastAPI.',
+        },
+        mobileApps: {
+          title: 'Mobile Apps',
+          description: 'High-quality iOS and Android applications using Flutter and React Native.',
+        },
+        uiuxDesign: {
+          title: 'UI/UX Design',
+          description: 'Intuitive, modern design solutions that enhance the user experience.',
+        },
+        telegramBots: {
+          title: 'Telegram Bots',
+          description: 'Custom Telegram bots that automate business processes and handle orders.',
+        },
+        itConsulting: {
+          title: 'IT Consulting',
+          description: 'Professional technology strategy and consulting for your business growth.',
+        },
+        cloudSolutions: {
+          title: 'Cloud Solutions',
+          description: 'Server and infrastructure management on AWS, Google Cloud and DigitalOcean.',
+        },
+      },
+    },
+    projects: {
+      title: 'Recent Projects',
+      subtitle: '-Our Latest Work',
+      categories: {
+        web: 'Web',
+        mobile: 'Mobile',
+        bot: 'Bot',
+      },
+      items: {
+        ecommerce: {
+          title: 'E-Commerce Platform',
+          description: 'Full-featured online store with payment integration and admin panel.',
+        },
+        crm: {
+          title: 'CRM System',
+          description: 'Customer relationship management system with analytics and reports.',
+        },
+        delivery: {
+          title: 'Delivery App',
+          description: 'Real-time tracking delivery application for iOS and Android.',
+        },
+        telegramCommerce: {
+          title: 'Telegram Commerce Bot',
+          description: 'Automated order-taking bot with payment integration for online sales.',
+        },
+      },
+    },
+    contact: {
+      heading: 'Get in Touch',
+      tagline: "Have a project in mind? Let's talk!",
+      body: 'Ready to bring your idea to life? Fill out the form and one of our specialists will get back to you within one business day.',
+      successTitle: 'Message sent successfully!',
+      successBody: "Thank you for reaching out. We'll be in touch shortly.",
+      sendAnother: 'Send another',
+      submit: 'Send Message',
+      fields: {
+        nameLabel: 'Your Name',
+        emailLabel: 'Email Address',
+        phoneLabel: 'Phone Number (optional)',
+        messageLabel: 'Message',
+      },
+      errors: {
+        nameRequired: 'Your name is required.',
+        emailRequired: 'Email address is required.',
+        emailInvalid: 'Please enter a valid email address.',
+        messageRequired: 'A message is required.',
+      },
+    },
+    footer: {
+      quickLinks: 'Quick Links',
+      ourServices: 'Our Services',
+      moreServices: 'More Services',
+      followUs: 'Follow Us',
+      copyright: '© 2026 Codefy Group. All rights reserved.',
+      links: {
+        home: 'Home',
+        about: 'About',
+        services: 'Services',
+        portfolio: 'Portfolio',
+        webDevelopment: 'Web Development',
+        mobileApps: 'Mobile Apps',
+        uiuxDesign: 'UI/UX Design',
+        telegramBots: 'Telegram Bots',
+        itConsulting: 'IT Consulting',
+        cloudSolutions: 'Cloud Solutions',
+      },
+      social: {
+        facebook: 'Facebook',
+        twitter: 'Twitter',
+        slack: 'Slack',
+        instagram: 'Instagram',
+        x: 'X',
+      },
+    },
+  },
+}
+
+export default en

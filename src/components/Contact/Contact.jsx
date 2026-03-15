@@ -1,17 +1,18 @@
 import { useState, useId } from 'react'
 import styles from './Contact.module.css'
+import { useTranslation } from 'react-i18next'
 
 const initialForm = { name: '', email: '', phone: '', message: '' }
 const initialErrors = { name: '', email: '', message: '' }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-function validate(form) {
+function validate(form, t) {
   const errors = { ...initialErrors }
-  if (!form.name.trim()) errors.name = 'Your name is required.'
-  if (!form.email.trim()) errors.email = 'Email address is required.'
-  else if (!EMAIL_RE.test(form.email)) errors.email = 'Please enter a valid email address.'
-  if (!form.message.trim()) errors.message = 'A message is required.'
+  if (!form.name.trim()) errors.name = t('contact.errors.nameRequired')
+  if (!form.email.trim()) errors.email = t('contact.errors.emailRequired')
+  else if (!EMAIL_RE.test(form.email)) errors.email = t('contact.errors.emailInvalid')
+  if (!form.message.trim()) errors.message = t('contact.errors.messageRequired')
   return errors
 }
 
@@ -20,6 +21,7 @@ function hasErrors(errors) {
 }
 
 function Contact() {
+  const { t } = useTranslation()
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState(initialErrors)
   const [submitted, setSubmitted] = useState(false)
@@ -38,7 +40,7 @@ function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    const nextErrors = validate(form)
+    const nextErrors = validate(form, t)
     if (hasErrors(nextErrors)) {
       setErrors(nextErrors)
       return
@@ -59,13 +61,12 @@ function Contact() {
       <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.headingRow}>
-            <h2 className={styles.heading}>Get in Touch</h2>
+            <h2 className={styles.heading}>{t('contact.heading')}</h2>
             <span className={styles.line} />
           </div>
-          <p className={styles.tagline}>Have a project in mind? Let's talk!</p>
+          <p className={styles.tagline}>{t('contact.tagline')}</p>
           <p className={styles.body}>
-            Ready to bring your idea to life? Fill out the form and one of our
-            specialists will get back to you within one business day.
+            {t('contact.body')}
           </p>
         </div>
 
@@ -73,24 +74,24 @@ function Contact() {
           <div className={styles.successBanner} role="alert">
             <span className={styles.successIcon}>✓</span>
             <div>
-              <strong>Message sent successfully!</strong>
-              <p>Thank you for reaching out. We'll be in touch shortly.</p>
+              <strong>{t('contact.successTitle')}</strong>
+              <p>{t('contact.successBody')}</p>
             </div>
             <button className={styles.successReset} onClick={handleReset}>
-              Send another
+              {t('contact.sendAnother')}
             </button>
           </div>
         ) : (
           <form className={styles.form} onSubmit={handleSubmit} noValidate>
             {/* Name */}
             <div className={styles.field}>
-              <label htmlFor={nameId} className={styles.srOnly}>Your Name</label>
+              <label htmlFor={nameId} className={styles.srOnly}>{t('contact.fields.nameLabel')}</label>
               <input
                 id={nameId}
                 className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder={t('contact.fields.nameLabel')}
                 value={form.name}
                 onChange={handleChange}
                 aria-describedby={errors.name ? `${nameId}-err` : undefined}
@@ -106,13 +107,13 @@ function Contact() {
 
             {/* Email */}
             <div className={styles.field}>
-              <label htmlFor={emailId} className={styles.srOnly}>Email Address</label>
+              <label htmlFor={emailId} className={styles.srOnly}>{t('contact.fields.emailLabel')}</label>
               <input
                 id={emailId}
                 className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
                 type="email"
                 name="email"
-                placeholder="Email Address"
+                placeholder={t('contact.fields.emailLabel')}
                 value={form.email}
                 onChange={handleChange}
                 aria-describedby={errors.email ? `${emailId}-err` : undefined}
@@ -128,13 +129,13 @@ function Contact() {
 
             {/* Phone (optional) */}
             <div className={styles.field}>
-              <label htmlFor={phoneId} className={styles.srOnly}>Phone Number (optional)</label>
+              <label htmlFor={phoneId} className={styles.srOnly}>{t('contact.fields.phoneLabel')}</label>
               <input
                 id={phoneId}
                 className={styles.input}
                 type="tel"
                 name="phone"
-                placeholder="Phone Number (optional)"
+                placeholder={t('contact.fields.phoneLabel')}
                 value={form.phone}
                 onChange={handleChange}
               />
@@ -142,12 +143,12 @@ function Contact() {
 
             {/* Message */}
             <div className={styles.field}>
-              <label htmlFor={messageId} className={styles.srOnly}>Message</label>
+              <label htmlFor={messageId} className={styles.srOnly}>{t('contact.fields.messageLabel')}</label>
               <textarea
                 id={messageId}
                 className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
                 name="message"
-                placeholder="Message"
+                placeholder={t('contact.fields.messageLabel')}
                 rows={4}
                 value={form.message}
                 onChange={handleChange}
@@ -163,7 +164,7 @@ function Contact() {
             </div>
 
             <button className={styles.button} type="submit">
-              Send Message
+              {t('contact.submit')}
             </button>
           </form>
         )}

@@ -1,47 +1,47 @@
 export const quickLinks = [
-  { id: 1, label: 'Home', href: '#home' },
-  { id: 2, label: 'About', href: '#about' },
-  { id: 3, label: 'Services', href: '#services' },
-  { id: 4, label: 'Portfolio', href: '#portfolio' },
+  { id: 1, labelKey: 'footer.links.home', href: '#home' },
+  { id: 2, labelKey: 'footer.links.about', href: '#about' },
+  { id: 3, labelKey: 'footer.links.services', href: '#services' },
+  { id: 4, labelKey: 'footer.links.portfolio', href: '#portfolio' },
 ]
 
 export const ourServices = [
-  { id: 1, label: 'Web Development', href: '#services' },
-  { id: 2, label: 'Mobile Apps', href: '#services' },
-  { id: 3, label: 'UI/UX Design', href: '#services' },
+  { id: 1, labelKey: 'footer.links.webDevelopment', href: '#services' },
+  { id: 2, labelKey: 'footer.links.mobileApps', href: '#services' },
+  { id: 3, labelKey: 'footer.links.uiuxDesign', href: '#services' },
 ]
 
 export const moreServices = [
-  { id: 1, label: 'Telegram Bots', href: '#services' },
-  { id: 2, label: 'IT Consulting', href: '#services' },
-  { id: 3, label: 'Cloud Solutions', href: '#services' },
+  { id: 1, labelKey: 'footer.links.telegramBots', href: '#services' },
+  { id: 2, labelKey: 'footer.links.itConsulting', href: '#services' },
+  { id: 3, labelKey: 'footer.links.cloudSolutions', href: '#services' },
 ]
 
 
 export const socialLinks = [
   {
     id: 1,
-    name: 'facebook',
+    nameKey: 'footer.social.facebook',
     icon: 'facebook',
   },
   {
     id: 2,
-    name: 'twitter',
+    nameKey: 'footer.social.twitter',
     icon: 'twitter',
   },
   {
     id: 3,
-    name: 'slack',
+    nameKey: 'footer.social.slack',
     icon: 'slack',
   },
   {
     id: 4,
-    name: 'instagram',
+    nameKey: 'footer.social.instagram',
     icon: 'instagram',
   },
   {
     id: 5,
-    name: 'twitter-alt',
+    nameKey: 'footer.social.x',
     icon: 'x',
   },
 ]
