@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 
 function LazyImage({
   src,
@@ -59,4 +59,4 @@ function LazyImage({
   )
 }
 
-export default LazyImage
+export default memo(LazyImage)

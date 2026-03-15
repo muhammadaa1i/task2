@@ -335,6 +335,44 @@
   /* Remove border radius and shadow since it's a floating 3D illustration */
 }
 
+/* ── Stats bar ── */
+.statsBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 2.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.statItem:last-child {
+  border-right: none;
+}
+
+.statValue {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.82rem;
+  color: rgba(220, 232, 251, 0.75);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .logoText {
@@ -388,5 +426,21 @@
 
   .actions {
     flex-wrap: wrap;
+  }
+
+  .statItem {
+    padding: 0.5rem 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .statItem:last-child {
+    border-bottom: none;
+  }
+
+  .statsBar {
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 1.2rem;
   }
 }

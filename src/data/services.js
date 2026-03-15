@@ -1,26 +1,39 @@
 export const services = [
   {
     id: 1,
-    icon: 'laptop-code',
+    icon: 'monitor',
     title: 'Web Development',
-    description: 'Custom websites and web applications',
+    description: 'Modern, fast websites and web apps built with React, Next.js and FastAPI.',
   },
   {
     id: 2,
-    icon: 'mobile',
-    title: 'Mobile App Development',
-    description: 'iOS and Android app solutions',
+    icon: 'smartphone',
+    title: 'Mobile Apps',
+    description: 'High-quality iOS and Android applications using Flutter and React Native.',
   },
   {
     id: 3,
     icon: 'palette',
     title: 'UI/UX Design',
-    description: 'User-friendly and modern design',
+    description: 'Intuitive, modern design solutions that enhance the user experience.',
   },
   {
     id: 4,
-    icon: 'tools',
+    icon: 'send',
+    title: 'Telegram Bots',
+    description: 'Custom Telegram bots that automate business processes and handle orders.',
+  },
+  {
+    id: 5,
+    icon: 'settings',
     title: 'IT Consulting',
-    description: 'Expert tech consulting services',
+    description: 'Professional technology strategy and consulting for your business growth.',
+  },
+  {
+    id: 6,
+    icon: 'cloud',
+    title: 'Cloud Solutions',
+    description: 'Server and infrastructure management on AWS, Google Cloud and DigitalOcean.',
   },
 ]
+

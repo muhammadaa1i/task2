@@ -1,0 +1,536 @@
+/* ── Hero Banner ── */
+.heroBanner {
+    background: linear-gradient(160deg, #1a3a6b 0%, #2358a8 40%, #3a7bd5 70%, #5ca0f0 100%);
+    padding: 4rem 1.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroBanner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 55%);
+    pointer-events: none;
+}
+
+.heroTitle {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.heroSubtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 400;
+    position: relative;
+}
+
+.heroSubtitle strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* ── Registration Section ── */
+.registrationSection {
+    background: var(--bg-white);
+    padding: 3rem 1.5rem;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sectionTitle {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.sectionBody {
+    font-size: 0.97rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ── Certificate Cards ── */
+.certGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+/* Actual certificate image */
+.certImgWrapper {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid #c8e6c9;
+    line-height: 0;
+}
+
+.certImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
+}
+
+.certCard {
+    background: #f9fafb;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.certCardGreen {
+    border-color: #a8d8b0;
+    background: #f4fbf5;
+}
+
+/* DIEZ header */
+.certHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.certLogo {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: var(--primary-dark);
+    letter-spacing: -0.02em;
+    background: var(--primary-light);
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+}
+
+.certLogoSub {
+    font-size: 0.68rem;
+    color: var(--text-medium);
+    line-height: 1.3;
+}
+
+.certDivider {
+    height: 1px;
+    background: var(--border);
+    margin: 0.15rem 0;
+}
+
+.certTitle {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.certRows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.certRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.76rem;
+    color: var(--text-medium);
+    border-bottom: 1px dashed #e0e7f0;
+    padding-bottom: 0.25rem;
+}
+
+.certRow strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.certFooter {
+    font-size: 0.68rem;
+    color: var(--text-light);
+    line-height: 1.4;
+    margin-top: 0.25rem;
+}
+
+/* IT Park certificate */
+.itparkHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.itparkLogo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.itparkIcon {
+    font-size: 1.3rem;
+}
+
+.itparkLogo strong {
+    font-size: 0.9rem;
+    color: #2a7a3b;
+    display: block;
+}
+
+.itparkLogo p {
+    font-size: 0.65rem;
+    color: var(--text-light);
+    line-height: 1.2;
+}
+
+.certNum {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.guvTitle {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #2a7a3b;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+
+.companyName {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.itparkBody {
+    font-size: 0.72rem;
+    color: var(--text-medium);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.itparkSeal {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 0.25rem;
+}
+
+/* ── Stats Row ── */
+.statsRow {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 1rem;
+    flex: 1;
+    min-width: 160px;
+}
+
+.statIcon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.statLabel {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    line-height: 1.2;
+}
+
+.statValue {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* ── Location Row ── */
+.locationRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1.25rem;
+}
+
+.locationItem {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.88rem;
+    color: var(--text-medium);
+}
+
+.locationLabel {
+    font-size: 0.82rem;
+    color: var(--text-light);
+}
+
+.locationDivider {
+    width: 1px;
+    height: 1.2rem;
+    background: var(--border);
+    flex-shrink: 0;
+}
+
+.dateHighlight {
+    font-size: 0.92rem;
+    color: var(--primary-dark);
+}
+
+/* ── Certified Badge ── */
+.certifiedBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.2rem;
+    background: #f0fbf2;
+    border: 1px solid #a8d8b0;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    flex-wrap: wrap;
+}
+
+.certifiedCheck {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.ifzaBadge {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2a7a3b;
+    background: #d6f0db;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* ── IT Park Banner ── */
+.itparkSection {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0;
+}
+
+/* Real photo background */
+.itparkBg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    z-index: 0;
+}
+
+/* Subtle left fade so logo stays readable */
+.itparkOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 255, 255, 0.25) 35%,
+        rgba(255, 255, 255, 0.0) 65%,
+        rgba(255, 255, 255, 0.0) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.itparkBannerContent {
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+}
+
+.itparkBannerLogo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.itparkSvgIcon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.18));
+}
+
+.itparkBannerText {
+    display: flex;
+    flex-direction: column;
+}
+
+.itparkBannerText strong {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #1a3a1a;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    text-shadow: 0 1px 3px rgba(255,255,255,0.6);
+}
+
+.itparkBannerText span {
+    font-size: 0.72rem;
+    color: #2e5c2e;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+}
+
+/* Flag — right side */
+.itparkFlagWrap {
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.itparkFlag {
+    height: 110px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 3px;
+    box-shadow: 2px 4px 16px rgba(0,0,0,0.28);
+    transform: perspective(400px) rotateY(-6deg);
+}
+
+/* ── Tagline Section ── */
+.taglineSection {
+    background: var(--bg-white);
+    padding: 2.5rem 1.5rem 3rem;
+    text-align: center;
+}
+
+.taglineBody {
+    font-size: 0.97rem;
+    color: var(--text-medium);
+    line-height: 1.75;
+    max-width: 620px;
+    margin: 0 auto 1.25rem;
+}
+
+.taglineBody strong {
+    color: var(--text-dark);
+}
+
+.tagline {
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+.taglineStart {
+    color: var(--primary);
+}
+
+.taglineGo {
+    color: #2a7a3b;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .certGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .certImgWrapper {
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .statsRow {
+        flex-direction: column;
+    }
+
+    .locationRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .locationDivider {
+        display: none;
+    }
+
+    .ifzaBadge {
+        margin-left: 0;
+    }
+
+    .itparkSection {
+        height: 140px;
+    }
+
+    .itparkBannerContent {
+        padding: 0 1rem;
+    }
+
+    .itparkSvgIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .itparkBannerText strong {
+        font-size: 1.1rem;
+    }
+
+    .itparkFlagWrap {
+        padding: 0 1rem;
+    }
+
+    .itparkFlag {
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroBanner {
+        padding: 3rem 1rem 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+}

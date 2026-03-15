@@ -11,12 +11,51 @@ const NAV_LINKS = [
 
 const SECTION_IDS = ['home', 'about', 'services', 'portfolio', 'contact', 'blog']
 
+const STATS = [
+  { end: 200, suffix: '+', label: 'Completed Projects' },
+  { end: 150, suffix: '+', label: 'Happy Clients' },
+  { end: 8, suffix: '+', label: 'Years Experience' },
+]
+
+function useCounter(end, duration = 1800, active = false) {
+  const [count, setCount] = useState(0)
+  useEffect(() => {
+    if (!active) return
+    let start = 0
+    const step = Math.ceil(end / (duration / 16))
+    const timer = setInterval(() => {
+      start += step
+      if (start >= end) {
+        setCount(end)
+        clearInterval(timer)
+      } else {
+        setCount(start)
+      }
+    }, 16)
+    return () => clearInterval(timer)
+  }, [end, duration, active])
+  return count
+}
+
 function Hero() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const [statsActive, setStatsActive] = useState(false)
+  const statsRef = useRef(null)
   const menuRef = useRef(null)
   const hamburgerRef = useRef(null)
+
+  // Trigger counter animation when stats come into view
+  useEffect(() => {
+    if (!statsRef.current) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsActive(true); observer.disconnect() } },
+      { threshold: 0.3 },
+    )
+    observer.observe(statsRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   // Sticky navbar: detect scroll past hero
   useEffect(() => {
@@ -191,9 +230,26 @@ function Hero() {
               />
             </div>
           </div>
+
+          {/* ── Stats bar ── */}
+          <div className={styles.statsBar} ref={statsRef}>
+            {STATS.map(({ end, suffix, label }) => (
+              <StatItem key={label} end={end} suffix={suffix} label={label} active={statsActive} />
+            ))}
+          </div>
         </div>
       </header>
     </>
+  )
+}
+
+function StatItem({ end, suffix, label, active }) {
+  const count = useCounter(end, 1600, active)
+  return (
+    <div className={styles.statItem}>
+      <span className={styles.statValue}>{count}{suffix}</span>
+      <span className={styles.statLabel}>{label}</span>
+    </div>
   )
 }
 

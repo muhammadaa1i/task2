@@ -6,14 +6,15 @@ export const quickLinks = [
 ]
 
 export const ourServices = [
-  { id: 1, label: 'Web Development', href: '#' },
-  { id: 2, label: 'Mobile Apps', href: '#' },
-  { id: 3, label: 'IT Consulting', href: '#' },
+  { id: 1, label: 'Web Development', href: '#services' },
+  { id: 2, label: 'Mobile Apps', href: '#services' },
+  { id: 3, label: 'UI/UX Design', href: '#services' },
 ]
 
 export const moreServices = [
-  { id: 1, label: 'UI/UX Design', href: '#services' },
+  { id: 1, label: 'Telegram Bots', href: '#services' },
   { id: 2, label: 'IT Consulting', href: '#services' },
+  { id: 3, label: 'Cloud Solutions', href: '#services' },
 ]
 
 

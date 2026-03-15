@@ -1,10 +1,11 @@
 import styles from './ProjectCard.module.css'
 import LazyImage from '../../shared/LazyImage/LazyImage'
 
-function ProjectCard({ title, description, image, priority = false }) {
+function ProjectCard({ title, description, image, category, priority = false }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageWrap}>
+        {category && <span className={styles.categoryBadge}>{category}</span>}
         <LazyImage
           src={image}
           alt={title}

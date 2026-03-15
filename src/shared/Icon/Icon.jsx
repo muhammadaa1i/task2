@@ -1,98 +1,163 @@
-const iconPaths = {
-  'laptop-code': (
-    <>
-      <rect x="3" y="4" width="18" height="13" rx="2.5" fill="#1f79e3" />
-      <rect x="5.3" y="6.1" width="13.4" height="8.8" rx="1.4" fill="#7fc7ff" />
-      <rect x="8" y="18" width="8" height="1.7" rx="0.85" fill="#1d2b57" />
-      <rect x="14" y="11.6" width="7.2" height="7.2" rx="1.6" fill="#123e87" />
-      <circle cx="17.6" cy="15.2" r="1.55" fill="#f5c12e" />
-      <path d="m16.7 14.9.7-.8m1.9 2.2.7-.8" stroke="#fff" strokeWidth="0.8" strokeLinecap="round" />
-    </>
-  ),
-  mobile: (
-    <>
-      <rect x="7" y="2" width="10" height="20" rx="2.2" fill="#123e87" />
-      <rect x="8.25" y="3.6" width="7.5" height="14.6" rx="1.2" fill="#2190f5" />
-      <rect x="8.25" y="3.6" width="7.5" height="2.2" rx="1" fill="#ef7a46" />
-      <rect x="11.1" y="19.3" width="1.8" height="1.8" rx="0.9" fill="#9fd0ff" />
-      <path d="m10.2 10.6 2.1 2.2 1.8-2" stroke="#9fd0ff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-    </>
-  ),
-  palette: (
-    <>
-      <circle cx="11.2" cy="12.2" r="7" fill="#2e91f4" />
-      <circle cx="8.4" cy="8.7" r="1.1" fill="#f05349" />
-      <circle cx="11.6" cy="7.5" r="1.1" fill="#f6d049" />
-      <circle cx="14.7" cy="8.6" r="1.1" fill="#66d05f" />
-      <circle cx="15.5" cy="12.1" r="1.1" fill="#8f6df0" />
-      <path d="M12.7 18.1c0-1.5 1.1-2.6 2.6-2.6h.6a1.8 1.8 0 0 0 0-3.6h-1.1" stroke="#d8ecff" strokeWidth="1.2" strokeLinecap="round" />
-      <path d="m13.7 5.1 6.3 6.3" stroke="#f4bf36" strokeWidth="2.2" strokeLinecap="round" />
-      <path d="m19.5 10.8 2.2 2.2-1.3 1.3-2.2-2.2" fill="#e8ecf6" />
-    </>
-  ),
-  tools: (
-    <>
-      <path d="M12 4.4a1.8 1.8 0 0 1 3.6 0v.5c.6.2 1.2.5 1.7 1l.5-.3a1.8 1.8 0 1 1 1.8 3.1l-.5.3c.1.6.1 1.2 0 1.8l.5.3a1.8 1.8 0 1 1-1.8 3.1l-.5-.3c-.5.4-1.1.8-1.7 1v.5a1.8 1.8 0 0 1-3.6 0v-.5c-.6-.2-1.2-.5-1.7-1l-.5.3a1.8 1.8 0 1 1-1.8-3.1l.5-.3a5.8 5.8 0 0 1 0-1.8l-.5-.3a1.8 1.8 0 1 1 1.8-3.1l.5.3c.5-.4 1.1-.8 1.7-1z" fill="#196dc5" />
-      <circle cx="13.8" cy="10.1" r="2.3" fill="#a8d5ff" />
-      <path d="m5 19.4 5.7-5.7 1.6 1.6-5.7 5.7H5z" fill="#203b6b" />
-      <path d="m10.7 13.7 1.6 1.6" stroke="#d8ebff" strokeWidth="1" />
-      <circle cx="18.5" cy="15.3" r="2.8" fill="#f3b63d" />
-      <path d="M18.5 13.8v3m-1.5-1.5h3" stroke="#fff" strokeWidth="1" strokeLinecap="round" />
-    </>
-  ),
-  facebook: <path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v5h3v-5h2.3l.7-3H13V9a1 1 0 0 1 1-1z" />, 
-  twitter: <path d="M19 7.2c-.6.3-1.2.5-1.9.6a3.3 3.3 0 0 0-5.7 3v.7A9.3 9.3 0 0 1 5 8.3a3.3 3.3 0 0 0 1 4.4 3 3 0 0 1-1.5-.4v.1a3.3 3.3 0 0 0 2.6 3.2c-.4.1-.9.2-1.3 0a3.3 3.3 0 0 0 3 2.3A6.7 6.7 0 0 1 4 19.2a9.5 9.5 0 0 0 14.6-8c0-.2 0-.4 0-.6.7-.4 1.2-.9 1.6-1.5z" />,
-  slack: (
-    <>
-      <path d="M9.4 4.5A2.1 2.1 0 1 1 7.3 2.4h2.1z" />
-      <path d="M10.5 4.5A2.1 2.1 0 0 1 12.6 2.4v5.2a2.1 2.1 0 1 1-4.2 0V4.5z" />
-      <path d="M19.5 9.4A2.1 2.1 0 1 1 21.6 7.3v2.1z" />
-      <path d="M19.5 10.5A2.1 2.1 0 0 1 21.6 12.6h-5.2a2.1 2.1 0 1 1 0-4.2h3.1z" />
-      <path d="M14.6 19.5A2.1 2.1 0 1 1 16.7 21.6h-2.1z" />
-      <path d="M13.5 19.5A2.1 2.1 0 0 1 11.4 21.6v-5.2a2.1 2.1 0 1 1 4.2 0v3.1z" />
-      <path d="M4.5 14.6A2.1 2.1 0 1 1 2.4 16.7v-2.1z" />
-      <path d="M4.5 13.5A2.1 2.1 0 0 1 2.4 11.4h5.2a2.1 2.1 0 1 1 0 4.2z" />
-    </>
-  ),
-  instagram: (
-    <>
-      <rect x="4" y="4" width="16" height="16" rx="4" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
-    </>
-  ),
-  x: (
-    <>
-      <path d="M5 5h4l3 4 3-4h4l-5 7 5 7h-4l-3-4-3 4H5l5-7z" />
-    </>
-  ),
+import { memo } from 'react'
+
+// Exact SVG paths from Lucide Icons (https://lucide.dev) — MIT License
+// Inline for zero HTTP requests and perfect tree-shaking
+
+const ICONS = {
+  // ── Service icons ──────────────────────────────────────────────────────────
+  'monitor': {
+    paths: (
+      <>
+        <rect width="20" height="14" x="2" y="3" rx="2" />
+        <line x1="8" x2="16" y1="21" y2="21" />
+        <line x1="12" x2="12" y1="17" y2="21" />
+      </>
+    ),
+    color: '#1f67db',
+    bg: 'rgba(31,103,219,0.10)',
+  },
+  'smartphone': {
+    paths: (
+      <>
+        <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+        <path d="M12 18h.01" />
+      </>
+    ),
+    color: '#7c3aed',
+    bg: 'rgba(124,58,237,0.10)',
+  },
+  'palette': {
+    paths: (
+      <>
+        <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+      </>
+    ),
+    color: '#db2777',
+    bg: 'rgba(219,39,119,0.10)',
+  },
+  'send': {
+    paths: (
+      <>
+        <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+        <path d="m21.854 2.147-10.94 10.939" />
+      </>
+    ),
+    color: '#229ed9',
+    bg: 'rgba(34,158,217,0.10)',
+  },
+  'settings': {
+    paths: (
+      <>
+        <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+        <circle cx="12" cy="12" r="3" />
+      </>
+    ),
+    color: '#0891b2',
+    bg: 'rgba(8,145,178,0.10)',
+  },
+  'cloud': {
+    paths: (
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+    ),
+    color: '#0ea5e9',
+    bg: 'rgba(14,165,233,0.10)',
+  },
+
+  // ── Social / brand icons ────────────────────────────────────────────────────
+  'facebook': {
+    paths: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />,
+    color: null,
+    bg: null,
+  },
+  'twitter': {
+    paths: <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />,
+    color: null,
+    bg: null,
+  },
+  'telegram': {
+    paths: (
+      <>
+        <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+        <path d="m21.854 2.147-10.94 10.939" />
+      </>
+    ),
+    color: null,
+    bg: null,
+  },
+  'slack': {
+    paths: (
+      <>
+        <rect width="3" height="8" x="13" y="2" rx="1.5" />
+        <path d="M19 8.5V10h1.5A1.5 1.5 0 1 0 19 8.5" />
+        <rect width="3" height="8" x="8" y="14" rx="1.5" />
+        <path d="M5 15.5V14H3.5A1.5 1.5 0 1 0 5 15.5" />
+        <rect width="8" height="3" x="14" y="13" rx="1.5" />
+        <path d="M15.5 19H14v1.5a1.5 1.5 0 1 0 1.5-1.5" />
+        <rect width="8" height="3" x="2" y="8" rx="1.5" />
+        <path d="M8.5 5H10V3.5A1.5 1.5 0 1 0 8.5 5" />
+      </>
+    ),
+    color: null,
+    bg: null,
+  },
+  'instagram': {
+    paths: (
+      <>
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+      </>
+    ),
+    color: null,
+    bg: null,
+  },
+  'x': {
+    paths: (
+      <>
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </>
+    ),
+    color: null,
+    bg: null,
+  },
+
+  // ── Legacy aliases ──────────────────────────────────────────────────────────
+  'laptop-code': { paths: <><rect width="20" height="14" x="2" y="3" rx="2" /><line x1="8" x2="16" y1="21" y2="21" /><line x1="12" x2="12" y1="17" y2="21" /></>, color: '#1f67db', bg: 'rgba(31,103,219,0.10)' },
+  'mobile': { paths: <><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></>, color: '#7c3aed', bg: 'rgba(124,58,237,0.10)' },
+  'tools': { paths: <><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" /><circle cx="12" cy="12" r="3" /></>, color: '#0891b2', bg: 'rgba(8,145,178,0.10)' },
+  'telegram-service': { paths: <><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></>, color: '#229ed9', bg: 'rgba(34,158,217,0.10)' },
 }
 
-function Icon({ name, className, ariaHidden = true }) {
-  const icon = iconPaths[name]
+const Icon = memo(function Icon({ name, className, style, ariaHidden = true }) {
+  const icon = ICONS[name]
+  if (!icon) return null
 
-  if (!icon) {
-    return null
-  }
-
-  const colorfulServiceIcon = ['laptop-code', 'mobile', 'palette', 'tools'].includes(name)
+  const { paths, color } = icon
 
   return (
     <svg
       viewBox="0 0 24 24"
-      fill={colorfulServiceIcon ? 'none' : 'currentColor'}
-      stroke={colorfulServiceIcon ? 'none' : 'currentColor'}
-      strokeWidth={colorfulServiceIcon ? 0 : 1.8}
+      fill="none"
+      stroke={color || 'currentColor'}
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       shapeRendering="geometricPrecision"
       className={className}
+      style={style}
       aria-hidden={ariaHidden}
       focusable="false"
     >
-      {icon}
+      {paths}
     </svg>
   )
-}
+})
 
+export { ICONS }
 export default Icon
+

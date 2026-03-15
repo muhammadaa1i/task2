@@ -1,4 +1,5 @@
 import styles from './About.module.css'
+import TrustedWorldwide from './TrustedWorldwide'
 
 const STATS = [
     { value: '8+', label: 'Years of Experience' },
@@ -8,6 +9,7 @@ const STATS = [
 
 function About() {
     return (
+        <>
         <section id="about" className={styles.section}>
             <div className={styles.container}>
                 {/* Left — text */}
@@ -49,6 +51,8 @@ function About() {
                 </div>
             </div>
         </section>
+        <TrustedWorldwide />
+    </>
     )
 }
 

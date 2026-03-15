@@ -15,6 +15,7 @@ function Projects() {
               title={project.title}
               description={project.description}
               image={project.image}
+              category={project.category}
               priority={index === 0}
             />
           ))}
